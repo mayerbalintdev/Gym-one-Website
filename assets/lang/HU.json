@@ -2,12 +2,27 @@
     "mainpage": "Kezdőlap",
     "downloadpage": "Letöltés",
     "docspage": "Dokumentumok",
-    "heromain": "HERO",
-    "herotext": "A",
+    "heromain": "Optimalizálja edzőtermi rendszerét egy átfogó webes megoldással.",
+    "herotext": "A GYM One egy teljesen <strong>ingyenes</strong> és <strong>nyílt forráskódú</strong> webes megoldás az edzőtermeknek.",
 
     "downloadbtn": "Letöltés",
     "secondbtn": "Tudj meg többet",
 
-    "oneclick_install": "Egyklik"
+    "oneclick_install": "Egy kattintással telepítheti a weboldalt",
 
+    "community-main": "A közösségért készítve",
+    "community-secondary": "A GYM One egy nyílt forráskódú projekt. Nem kell aggódnod a drága fejlesztői díjak vagy a rossz tárhely miatt. Ott hosztolod a webhelyedet, ahol akarod.",
+    "community-third": "Segítségre van szükséged? Nem probléma, a <a href='discord.com'>Discordon</a> több száz tagból álló aktív közösségünk van. A GYM One nyílt forráskódú, így bárki hozzájárulhat a projekthez a <a href='discord.com'>GitHubon</a>.",
+
+    "worldwide-main": "Több mint num szerver bízik bennünk.",
+    "worldwide-secondary": "A Magyarországon kifejlesztett GYM One-ban világszerte több mint száz szerver bízik, és több mint <a href='LEFORDÍT'>2 nyelvre fordították le.</a>",
+    "worldwide-third": "A kézzel írt kód miatt a rendszer megbízható és biztonságos.",
+
+    "links": "Linkek",
+    "copyright": "Minden jog fenntartva",
+    "support-us": "Támogatás",
+    
+    "install-one": "Készen állsz az indulásra? A zökkenőmentes telepítés érdekében mindenképpen nézzd meg a <a href='../doc'>dokumentációt</a>.",
+    "install-two": "Csatlakozz a közösséghez a <a href='LINK'>Discordon</a>, hogy értesülj a legfrissebb hírekről és segítséget kapj!",
+    "install-three": "Hogy segíts nekünk a GYM One további fejlesztésében? Többféleképpen is <a href='LINK'>támogathatsz</a> minket."
 }
