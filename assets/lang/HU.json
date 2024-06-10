@@ -3,6 +3,11 @@
     "downloadpage": "Letöltés",
     "docspage": "Dokumentumok",
     "heromain": "HERO",
-    "herotext": "A"
+    "herotext": "A",
+
+    "downloadbtn": "Letöltés",
+    "secondbtn": "Tudj meg többet",
+
+    "oneclick_install": "Egyklik"
 
 }
