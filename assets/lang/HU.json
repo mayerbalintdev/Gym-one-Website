@@ -24,5 +24,15 @@
     
     "install-one": "Készen állsz az indulásra? A zökkenőmentes telepítés érdekében mindenképpen nézzd meg a <a href='../doc'>dokumentációt</a>.",
     "install-two": "Csatlakozz a közösséghez a <a href='LINK'>Discordon</a>, hogy értesülj a legfrissebb hírekről és segítséget kapj!",
-    "install-three": "Hogy segíts nekünk a GYM One további fejlesztésében? Többféleképpen is <a href='LINK'>támogathatsz</a> minket."
+    "install-three": "Hogy segíts nekünk a GYM One további fejlesztésében? Többféleképpen is <a href='LINK'>támogathatsz</a> minket.",
+
+    "support-text": "Te is tehetsz valamit.",
+    "support-text-two" : "Hozzájárulok a GYM One növekedéséhez.",
+    "support-content": "Teljes szívemből örülök a GYM One fejlesztésének, és bízom benne, hogy te is örömödet leled majd a használatában. Ha úgy érzed, hogy szeretnéd támogatni a projekt további fejlődését, számos lehetőséged van erre.",
+    "sponsor": "Támogatás",
+    "sponsor-text": "Bár az GYM One ingyenes, a fenntartása nem az. A szerver hosting, a domain nevek és egyéb szolgáltatások pénzbe kerülnek. A GitHubon támogathatod a projektet, hogy <strong>egyedi előnyökhöz juss</strong>.",
+    "sponsor-btn": "Támogatás a Githubon",
+    "star": "Csillag a projektre",
+    "star-text": "Nem tudsz vagy nem akarsz minket szponzorálni? Semmi gond, akkor is támogathatsz minket, ha a GitHubon csillaggal jelölöd meg a projektet. Ez <strong>teljesen ingyenes</strong> és csak néhány másodpercet vesz igénybe, de sokat segít nekünk.",
+    "star-btn": "Csillagot adok!"
 }

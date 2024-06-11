@@ -5,17 +5,25 @@ $github_url = "";
 $discord_url = "";
 $twitter_url = "";
 
+$langDir = __DIR__ . "/assets/lang/";
+$langFiles = glob($langDir . "*.json");
+$languages = [];
 
-$lang = 'HU';
-if (isset($_GET['lang']) && file_exists(__DIR__ . "/assets/lang/{$_GET['lang']}.json")) {
-  $lang = $_GET['lang'];
+foreach ($langFiles as $file) {
+    $code = strtoupper(pathinfo($file, PATHINFO_FILENAME));
+    $languages[$code] = $code;
 }
 
-$langFile = __DIR__ . "/assets/lang/$lang.json";
+$lang = 'HU';
+if (isset($_GET['lang']) && file_exists($langDir . "{$_GET['lang']}.json")) {
+    $lang = $_GET['lang'];
+}
+
+$langFile = $langDir . "$lang.json";
 if (file_exists($langFile)) {
-  $translations = json_decode(file_get_contents($langFile), true);
+    $translations = json_decode(file_get_contents($langFile), true);
 } else {
-  die("A nyelvi fájl nem található: $langFile");
+    die("A nyelvi fájl nem található: $langFile");
 }
 ?>
 
@@ -123,66 +131,20 @@ if (file_exists($langFile)) {
           <li class="nav-item dropdown">
             <a id="langDropdown" class="nav-link dropdown-toggle px-3" href="#" role="button" data-bs-toggle="dropdown"
               aria-haspopup="true" aria-expanded="false">
-              <img src="https://GYM.One.com/assets/svg/country/us.svg" class="svg country" alt="English">
+              <img
+                src="https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/<?php echo strtolower($lang); ?>.svg"
+                class="svg country" alt="<?php echo $lang; ?>">
             </a>
 
             <div class="dropdown-menu dropdown-menu-end locale-selector" aria-labelledby="langDropdown">
-
-              <a class="dropdown-item" data-locale="fr" href="https://GYM.One.com/fr/">
-                <img src="https://GYM.One.com/assets/svg/country/fr.svg" class="svg" alt="Français">
-                Français
-              </a>
-
-              <a class="dropdown-item" data-locale="tr" href="https://GYM.One.com/tr/">
-                <img src="https://GYM.One.com/assets/svg/country/tr.svg" class="svg" alt="Türkçe">
-                Türkçe
-              </a>
-
-              <a class="dropdown-item" data-locale="cs" href="https://GYM.One.com/cs/">
-                <img src="https://GYM.One.com/assets/svg/country/cz.svg" class="svg" alt="Čeština">
-                Čeština
-              </a>
-
-              <a class="dropdown-item" data-locale="en" href="https://GYM.One.com/en/">
-                <img src="https://GYM.One.com/assets/svg/country/us.svg" class="svg" alt="English">
-                English
-              </a>
-
-              <a class="dropdown-item" data-locale="nl" href="https://GYM.One.com/nl/">
-                <img src="https://GYM.One.com/assets/svg/country/nl.svg" class="svg" alt="Nederlands">
-                Nederlands
-              </a>
-
-              <a class="dropdown-item" data-locale="pt-br" href="https://GYM.One.com/pt-br/">
-                <img src="https://GYM.One.com/assets/svg/country/br.svg" class="svg" alt="Português do Brasil">
-                Português do Brasil
-              </a>
-
-              <a class="dropdown-item" data-locale="de" href="https://GYM.One.com/de/">
-                <img src="https://GYM.One.com/assets/svg/country/de.svg" class="svg" alt="Deutsch">
-                Deutsch
-              </a>
-
-              <a class="dropdown-item" data-locale="pl" href="https://GYM.One.com/pl/">
-                <img src="https://GYM.One.com/assets/svg/country/pl.svg" class="svg" alt="Polski">
-                Polski
-              </a>
-
-              <a class="dropdown-item" data-locale="ru" href="https://GYM.One.com/ru/">
-                <img src="https://GYM.One.com/assets/svg/country/ru.svg" class="svg" alt="Русский">
-                Русский
-              </a>
-
-              <a class="dropdown-item" data-locale="uk" href="https://GYM.One.com/uk/">
-                <img src="https://GYM.One.com/assets/svg/country/ua.svg" class="svg" alt="Українська">
-                Українська
-              </a>
-
-              <a class="dropdown-item" data-locale="zh-cn" href="https://GYM.One.com/zh-cn/">
-                <img src="https://GYM.One.com/assets/svg/country/cn.svg" class="svg" alt="简体中文">
-                简体中文
-              </a>
-
+              <?php foreach ($languages as $code => $name): ?>
+                <a class="dropdown-item" href="#" onclick="changeLanguage('<?php echo $code; ?>')">
+                  <img
+                    src="https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/<?php echo strtolower($code); ?>.svg"
+                    class="svg" alt="<?php echo $name; ?>">
+                  <?php echo $name; ?>
+                </a>
+              <?php endforeach; ?>
             </div>
           </li>
         </ul>
@@ -407,7 +369,7 @@ if (file_exists($langFile)) {
               <li><a href="<?php echo $github_url; ?>" target="_blank" rel="noopener noreferrer">GitHub</a></li>
               <li><a href="<?php echo $discord_url; ?>" target="_blank" rel="noopener noreferrer">Discord</a></li>
               <li><a href="<?php echo $twitter_url; ?>" target="_blank" rel="noopener noreferrer">Twitter</a></li>
-              <li><a href="/support-us"><?php echo $translations["support-us"]; ?></a></li>
+              <li><a href="support/"><?php echo $translations["support-us"]; ?></a></li>
             </ul>
           </div>
         </div>
