@@ -1,4 +1,7 @@
 {
+    "HU": "Magyar",
+    "GB": "Angol",
+    
     "mainpage": "Kezdőlap",
     "downloadpage": "Letöltés",
     "docspage": "Dokumentumok",
@@ -6,6 +9,7 @@
     "herotext": "A GYM One egy teljesen <strong>ingyenes</strong> és <strong>nyílt forráskódú</strong> webes megoldás az edzőtermeknek.",
 
     "downloadbtn": "Letöltés",
+    "download": "Letöltése",
     "secondbtn": "Tudj meg többet",
 
     "oneclick_install": "Egy kattintással telepítheti a weboldalt",
