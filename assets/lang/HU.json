@@ -5,21 +5,31 @@
     "mainpage": "Kezdőlap",
     "downloadpage": "Letöltés",
     "docspage": "Dokumentumok",
+    "installpage": "Telepítés",
+    "faqpage": "Gyakori kérdések",
+
     "heromain": "Optimalizálja edzőtermi rendszerét egy átfogó webes megoldással.",
     "herotext": "A GYM One egy teljesen <strong>ingyenes</strong> és <strong>nyílt forráskódú</strong> webes megoldás az edzőtermeknek.",
 
     "downloadbtn": "Letöltés",
     "download": "Letöltése",
-    "secondbtn": "Tudj meg többet",
+    "secondbtn": "Továbbiak",
 
     "oneclick_install": "Egy kattintással telepítheti a weboldalt",
+    "info-one" : "Elgondolkoztál már azon, milyen könnyű lenne egyszerűen kezelni az edzőtermed tagjait?",
+    "info-two" : "A GYM One mindezekre megoldást kínál, ráadásul <strong>100% ingyen</strong>!",
+
+    "one-benefit" : "A webszoftver ingyenessége lehetővé teszi a fitneszklubok számára, hogy költséghatékony módon kezeljék a beléptetést és a tagok nyilvántartását",
+    "two-benefit" : "Az Open Source jellege révén a GYM One folyamatos fejlesztés alatt áll, és a felhasználók számára lehetőséget nyújt az egyedi igények szerinti testreszabásra és bővítésre.",
+    "three-benefit" : "Több nyelv támogatása lehetővé teszi, hogy a fitneszklubok globális ügyfelekkel dolgozzanak, növelve ezzel a potenciális piacot.",
+    "four-benefit" : "Egyszerű és intuitív felhasználói felülete segíti a klubokat abban, hogy gyorsan és hatékonyan kezeljék a tagok beléptetését és adatait.",
 
     "community-main": "A közösségért készítve",
     "community-secondary": "A GYM One egy nyílt forráskódú projekt. Nem kell aggódnod a drága fejlesztői díjak vagy a rossz tárhely miatt. Ott hosztolod a webhelyedet, ahol akarod.",
     "community-third": "Segítségre van szükséged? Nem probléma, a <a href='discord.com'>Discordon</a> több száz tagból álló aktív közösségünk van. A GYM One nyílt forráskódú, így bárki hozzájárulhat a projekthez a <a href='discord.com'>GitHubon</a>.",
 
-    "worldwide-main": "Több mint num szerver bízik bennünk.",
-    "worldwide-secondary": "A Magyarországon kifejlesztett GYM One-ban világszerte több mint száz szerver bízik, és több mint <a href='LEFORDÍT'>2 nyelvre fordították le.</a>",
+    "worldwide-main": "Több mint <strong>num</strong> edzőterem bízik bennünk.",
+    "worldwide-secondary": "A Magyarországon kifejlesztett GYM One-ban világszerte több mint száz ezdőterem bízik, és több mint <a href='LEFORDÍT'>2 nyelvre fordították le.</a>",
     "worldwide-third": "A kézzel írt kód miatt a rendszer megbízható és biztonságos.",
 
     "links": "Linkek",
@@ -38,5 +48,17 @@
     "sponsor-btn": "Támogatás a Githubon",
     "star": "Csillag a projektre",
     "star-text": "Nem tudsz vagy nem akarsz minket szponzorálni? Semmi gond, akkor is támogathatsz minket, ha a GitHubon csillaggal jelölöd meg a projektet. Ez <strong>teljesen ingyenes</strong> és csak néhány másodpercet vesz igénybe, de sokat segít nekünk.",
-    "star-btn": "Csillagot adok!"
+    "star-btn": "Csillagot adok!",
+
+    "introduction" : "Bevezetés",
+    "introduction_first" : "Az <a href = 'https://gymoneglobal.com/'>GYM One</a> a következő generációs edzőtermi informatikai szoftver, ingyenes és nyílt forráskódú, modern, megbízható, gyors és biztonságos alternatívája bármelyik szoftvereknek, így a lehető legjobb felhasználói élményt nyújtja.",
+    "introduction_second": "Ebben a dokumentációban minden információt megtalálsz az <strong>GYM One</strong>-ról!",
+    "introduction_third" : "Ha segítségre van szükséged vagy bármilyen kérdésed van, csatlakozhatsz <a href='https://gymoneglobal.com/discord'>Discord szerverünkhöz</a>.",
+
+    "credits" : "Hozzájárulások",
+    "credits_first" : "A GYM One-t <a href='https://www.mayerbalint.hu/'>Mayer Bálint</a> készítette fullstack programozással!",
+
+    "donors": "Adományozók",
+    "donors_first": "Az adományozók teszik lehetővé a projektet, nagy köszönet nekik!"
+
 }
