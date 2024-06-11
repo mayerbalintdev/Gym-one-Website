@@ -21,7 +21,7 @@ GYM One Website is a PHP based website
 A website built using the bootstrap framework. Based on PHP with Javascript and backend logic functions
 
 - [Bootstrap](https://getbootstrap.com)
-- [PHP] (https://www.php.net/)
+- [PHP](https://www.php.net/)
  ## Usage
 
 **The use of the website is only possible with the prior permission of the resellers, which is possible with the official consent of GYM One in the form of a form.**
