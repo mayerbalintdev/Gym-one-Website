@@ -82,6 +82,19 @@ if (file_exists($langFile)) {
 
 
                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item me-3">
+                        <a href="LOGIN" title="Login" class="nav-link ps-0 ps-lg-3 pe-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-person-circle" viewBox="0 0 16 16">
+                                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"></path>
+                                <path fill-rule="evenodd"
+                                    d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1">
+                                </path>
+                            </svg>
+
+                        </a>
+                    </li>
+
                     <li class="nav-item">
                         <a href="<?php echo $github_url; ?>" target="_blank" rel="noopener noreferrer" title="GitHub"
                             class="nav-link ps-0 ps-lg-3 pe-3">
@@ -159,7 +172,7 @@ if (file_exists($langFile)) {
 
                         <li class="nav-item">
                             <a class="nav-link " href="install/">
-                                <?php echo $translations["installpage"]; ?>
+                            <?php echo $translations["installpage"]; ?>
                             </a>
                         </li>
 
@@ -171,7 +184,7 @@ if (file_exists($langFile)) {
 
                         <li class="nav-item">
                             <a class="nav-link " href="faq/">
-                                <?php echo $translations["faqpage"]; ?>
+                            <?php echo $translations["faqpage"]; ?>
                             </a>
                         </li>
 
@@ -221,72 +234,22 @@ if (file_exists($langFile)) {
                 <h2 id="introduction">
                     <a class="heading-permalink" href="#introduction"></a><?php echo $translations["introduction"]; ?>
                 </h2>
-                <p><?php echo $translations["introduction_first"]; ?></p>
+                <p><?php echo $translations["introduction_first"];?></p>
                 <p><?php echo $translations["introduction_second"]; ?></p>
                 <p><?php echo $translations["introduction_third"]; ?></p>
                 <h2 id="credits">
-                    <a class="heading-permalink" href="#credits"></a><?php echo $translations["credits"]; ?>
+                    <a class="heading-permalink" href="#credits"></a><?php echo $translations["credits"];?>
                 </h2>
-                <p><?php echo $translations["credits_first"]; ?></p>
+                <p><?php echo $translations["credits_first"];?></p>
                 <h3 id="donors">
-                    <a class="heading-permalink" href="#donors"></a><?php echo $translations["donors"]; ?>
+                    <a class="heading-permalink" href="#donors"></a><?php echo $translations["donors"];?>
                 </h3>
-                <p><?php echo $translations["donors_first"]; ?>
+                <p><?php echo $translations["donors_first"];?>
                 </p>
             </main>
         </div>
 
     </main>
-
-    <div class="footer-waves">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 8" fill="#252525">
-            <path opacity="0.7" d="M0 8 V8 C20 0, 40 0, 60 8 V8z"></path>
-            <path d="M0 8 V5 Q25 10 55 5 T100 4 V8z"></path>
-        </svg>
-    </div>
-    <div class="footer">
-        <div class="container">
-            <div class="row gy-4">
-                <div class="col-md-4 mb-1">
-                    <h2 class="mb-4">
-                        <img src="https://GYM.One.com/assets/svg/logo-text.svg" alt="GYM.One" height="50">
-                    </h2>
-
-                    <p><?php echo $translations["herotext"]; ?></p>
-                </div>
-                <div class="col-md-3 offset-md-1">
-                    <h2 class="text-light mb-4"></h2>
-                </div>
-
-                <div class="col-md-2 offset-md-1">
-                    <h2 class="text-light mb-4"><?php echo $translations["links"]; ?></h2>
-
-                    <ul class="list-unstyled links">
-                        <li><a href="<?php echo $github_url; ?>" target="_blank" rel="noopener noreferrer">GitHub</a>
-                        </li>
-                        <li><a href="<?php echo $discord_url; ?>" target="_blank" rel="noopener noreferrer">Discord</a>
-                        </li>
-                        <li><a href="<?php echo $twitter_url; ?>" target="_blank" rel="noopener noreferrer">Twitter</a>
-                        </li>
-                        <li><a href="support/"><?php echo $translations["support-us"]; ?></a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="border-top border-secondary pt-3 mt-3">
-                <p class="small text-center mb-0">
-                    Copyright © 2024 GYM One - <?php echo $translations["copyright"]; ?>. &nbsp;<svg
-                        xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                        class="bi bi-heart-fill" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd"
-                            d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314">
-                        </path>
-                    </svg>
-                    - <a href="https://www.mayerbalint.hu/">Mayer Bálint</a>
-                </p>
-            </div>
-        </div>
-    </div>
     <script>
         function changeLanguage(lang) {
             window.location.href = '?lang=' + lang;

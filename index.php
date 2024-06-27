@@ -1,8 +1,10 @@
 <?php
-session_start();
+session_start(); // Session kezdése vagy folytatása
+
 // DEF INFO
 $github_url = "https://github.com/mayerbalintdev/";
-$discord_url = "https://discord.gg/h5GSPtKPdc";
+$discord_url = "";
+$twitter_url = "";
 
 $langDir = __DIR__ . "/assets/lang/";
 $langFiles = glob($langDir . "*.json");
@@ -13,11 +15,13 @@ foreach ($langFiles as $file) {
   $languages[$code] = $code;
 }
 
+// Nyelv beállítás session-ben tárolása
 if (isset($_GET['lang']) && file_exists($langDir . "{$_GET['lang']}.json")) {
   $_SESSION['lang'] = $_GET['lang'];
 }
 
-$lang = isset($_SESSION['lang']) ? $_SESSION['lang'] : 'GB';
+// Ha a session-ben van tárolt nyelv, használjuk azt, különben alapértelmezett (HU)
+$lang = isset($_SESSION['lang']) ? $_SESSION['lang'] : 'HU';
 $langFile = $langDir . "$lang.json";
 
 if (file_exists($langFile)) {
@@ -27,70 +31,26 @@ if (file_exists($langFile)) {
 }
 ?>
 
-<?php
-$target_date = new DateTime('2025-01-11 00:00:00');
-
-$current_date = new DateTime();
-$interval = $current_date->diff($target_date);
-
-$days = $interval->days;
-$hours = $interval->h;
-$minutes = $interval->i;
-?>
-
 <!DOCTYPE html>
 <html lang="hu">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GYMOne - <?php echo $translations['mainpage']; ?></title>
-<link rel="stylesheet" href="assets/css/style.css">
-<link rel="shortcut icon" href="http://gymoneglobal.com/assets/img/logo.png" type="image/x-icon">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-  integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <link rel="shortcut icon" href="https://gymoneglobal.com/assets/img/logo.png" type="image/x-icon">
 
-<meta name="description"
-  content="GYM One is an open source web solution for gyms. Enjoy dozens of extensions for endless possibilities. Already trusted by more than 20 gyms with over 900 users.">
-<meta name="keywords"
-  content="open-source, free gym software, GYM One, fitness studio management, client management, booking system, financial tracking, gym software, fitness club management, personal trainer software, sports club management, membership management, gym administration, digital gym, fitness app, gymnasium software, online booking, comprehensive fitness management, workout tracking, membership system">
-<meta name="author" content="GYMOne">
-<meta name="theme-color" content="#004de6">
-<link rel="icon" href="http://gymoneglobal.com/assets/img/logo.png">
-
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="@GYMOne">
-<meta name="twitter:creator" content="@GYMOne">
-<meta name="twitter:title" content="Home">
-<meta name="twitter:description"
-  content="GYM One is an open source web solution for gyms. Enjoy dozens of extensions for endless possibilities. Already trusted by more than 20 gyms with over 900 users.">
-<meta name="twitter:image" content="http://gymoneglobal.com/assets/img/logo.png">
-
-<meta property="og:title" content="Homepage">
-<meta property="og:type" content="website">
-<meta property="og:url" content="http://gymoneglobal.com/">
-<meta property="og:site_name" content="GYM One">
-<meta property="og:description"
-  content="GYM One is an open source web solution for gyms. Enjoy dozens of extensions for endless possibilities. Already trusted by more than 20 gyms with over 900 users.">
-<meta property="og:image" content="http://gymoneglobal.com/assets/img/logo.png">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GYMOne - <?php echo $translations['mainpage']; ?></title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-75NV275ZQS"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag() { dataLayer.push(arguments); }
-  gtag('js', new Date());
-
-  gtag('config', 'G-75NV275ZQS');
-</script>
 
 <body>
   <!-- NAVBAR START -->
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary-gradient">
     <div class="container">
-      <a class="navbar-brand" href="https://gymoneglobal.com">
-        <img src="assets/img/text-logo.png" width="105" alt="GYM One">
+      <a class="navbar-brand" href="https://GYM.One.com/en/">
+        <img src="assets/img/logo.png" height="45" width="45" alt="GYM.One">
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
         aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -106,13 +66,13 @@ $minutes = $interval->i;
             </a>
           </li>
 
-          <li class="d-none nav-item">
+          <li class="nav-item">
             <a class="nav-link " href="download/">
               <?php echo $translations["downloadpage"]; ?>
             </a>
           </li>
 
-          <li class="d-none nav-item">
+          <li class="nav-item">
             <a class="nav-link " href="docs/">
               <?php echo $translations["docspage"]; ?>
             </a>
@@ -122,6 +82,19 @@ $minutes = $interval->i;
 
 
         <ul class="navbar-nav ms-auto">
+          <li class="nav-item me-3">
+            <a href="LOGIN" title="Login" class="nav-link ps-0 ps-lg-3 pe-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-person-circle" viewBox="0 0 16 16">
+                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"></path>
+                <path fill-rule="evenodd"
+                  d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1">
+                </path>
+              </svg>
+
+            </a>
+          </li>
+
           <li class="nav-item">
             <a href="<?php echo $github_url; ?>" target="_blank" rel="noopener noreferrer" title="GitHub"
               class="nav-link ps-0 ps-lg-3 pe-3">
@@ -141,6 +114,18 @@ $minutes = $interval->i;
                 viewBox="0 0 16 16">
                 <path
                   d="M13.545 2.907a13.227 13.227 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.19 12.19 0 0 0-3.658 0 8.258 8.258 0 0 0-.412-.833.051.051 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.041.041 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032c.001.014.01.028.021.037a13.276 13.276 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019c.308-.42.582-.863.818-1.329a.05.05 0 0 0-.01-.059.051.051 0 0 0-.018-.011 8.875 8.875 0 0 1-1.248-.595.05.05 0 0 1-.02-.066.051.051 0 0 1 .015-.019c.084-.063.168-.129.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.052.052 0 0 1 .053.007c.08.066.164.132.248.195a.051.051 0 0 1-.004.085 8.254 8.254 0 0 1-1.249.594.05.05 0 0 0-.03.03.052.052 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.235 13.235 0 0 0 4.001-2.02.049.049 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.034.034 0 0 0-.02-.019Zm-8.198 7.307c-.789 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612m5.316 0c-.788 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612">
+                </path>
+              </svg>
+
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="<?php echo $twitter_url; ?>" target="_blank" rel="noopener noreferrer" title="Twitter"
+              class="nav-link pe-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter"
+                viewBox="0 0 16 16">
+                <path
+                  d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15">
                 </path>
               </svg>
 
@@ -179,7 +164,7 @@ $minutes = $interval->i;
       </div>
       <div class="row text-center">
         <div class="col">
-          <a class="btn d-none btn-primary pulse mx-2 mb-4" href="download/"
+          <a class="btn btn-primary pulse mx-2 mb-4" href="download/"
             role="button"><?php echo $translations['downloadbtn']; ?> <i class="bi bi-rocket-takeoff"></i></a>
           <a class="btn btn-secondary mx-2 mb-4" href="#info" role="button"><i class="bi bi-plus-lg"></i></i>
             <?php echo $translations['secondbtn']; ?></a>
@@ -188,7 +173,8 @@ $minutes = $interval->i;
       <div class="row">
         <div class="col">
           <a href="<?php echo $github_url; ?>" target="_blank" class="btn"><i class="bi bi-github"></i></a>
-          <a href="<?php echo $discord_url; ?>" target="_blank" class="btn"><i class="bi bi-discord"></i></a>
+          <a href="<?php echo $discord_url; ?>" target="_blank" class="btn"><i class="bi bi-discord"></i></i></a>
+          <a href="<?php echo $twitter_url; ?>" target="_blank" class="btn"><i class="bi bi-twitter"></i></a>
         </div>
       </div>
     </div>
@@ -209,6 +195,7 @@ $minutes = $interval->i;
       </path>
     </svg>
   </div>
+
   <section id="info">
     <div class="container">
       <div class="row justify-content-center">
@@ -283,7 +270,7 @@ $minutes = $interval->i;
       </div>
     </div>
   </section>
-  <!-- <div class="bg-body-info">
+  <div class="bg-body-info">
     <svg viewBox="0 0 1000 70" xmlns="http://www.w3.org/2000/svg" fill="url(#gradient)" class="section-waves">
       <defs>
         <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -295,9 +282,9 @@ $minutes = $interval->i;
         d="M439.407,12.801c-80.921,15.363 -167.082,18.455 -248.277,2.849c-80.448,-15.463 -119.602,-14.391 -191.13,-14.391l0,68.741l1000,0l0,-68.741c-93.992,-8.581 -127.476,35.688 -278.561,19.139c-151.084,-16.548 -201.114,-22.958 -282.035,-7.597l0.003,0Z">
       </path>
     </svg>
-  </div> -->
+  </div>
   <!-- 2.resz -->
-  <!-- <section id="community">
+  <section id="community">
     <div class="container">
       <div class="row gy-4 justify-content-between text-start">
         <div class="col-md-5 align-self-center">
@@ -336,9 +323,9 @@ $minutes = $interval->i;
         d="M439.407,12.801c-80.921,15.363 -167.082,18.455 -248.277,2.849c-80.448,-15.463 -119.602,-14.391 -191.13,-14.391l0,68.741l1000,0l0,-68.741c-93.992,-8.581 -127.476,35.688 -278.561,19.139c-151.084,-16.548 -201.114,-22.958 -282.035,-7.597l0.003,0Z">
       </path>
     </svg>
-  </div> -->
+  </div>
   <!-- 3.resz -->
-  <!-- <section id="worldwide">
+  <section id="worldwide">
     <div class="container">
       <div class="row gy-4 justify-content-between text-start">
         <div class="col-md-4 offset-md-1 align-self-center">
@@ -369,70 +356,6 @@ $minutes = $interval->i;
         </div>
       </div>
     </div>
-  </section> -->
-  <section id="worldwide">
-    <div class="container">
-      <div class="row gy-4 justify-content-between text-start">
-        <div class="col-md-4 mt-5 offset-md-1 align-self-center">
-          <img src="assets/img/map.svg" alt="World" class="img-fluid" height="500" width="500">
-        </div>
-
-        <div class="col-md-6">
-          <div class="d-inline-block fs-1 lh-1 text-info bg-info bg-opacity-25 p-4 rounded-pill">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-              class="bi bi-question-circle" viewBox="0 0 16 16">
-              <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
-              <path
-                d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286m1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94" />
-            </svg>
-
-          </div>
-          <div class="mt-5"></div>
-          <div class="accordion accordion-flush" id="accordionFlushExample">
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="flush-headingOne">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                  <?php echo $translations["first_faq"]; ?>
-                </button>
-              </h2>
-              <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
-                data-bs-parent="#accordionFlushExample">
-                <div class="accordion-body"><?php echo $translations["first_faq-ans"]; ?></div>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="flush-headingTwo">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                  <?php echo $translations["second_faq"]; ?>
-                </button>
-              </h2>
-              <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
-                data-bs-parent="#accordionFlushExample">
-                <div class="accordion-body"><?php echo $translations["second_faq-ans"]; ?>
-                </div>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="flush-headingThree">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                  <?php echo $translations["third_faq"]; ?>
-                </button>
-              </h2>
-              <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
-                data-bs-parent="#accordionFlushExample" style="">
-                <div class="accordion-body"><?php echo $translations["third_faq-ans"]; ?>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-    </div>
   </section>
   <!-- FOOTER -->
   <div class="footer-waves">
@@ -446,7 +369,7 @@ $minutes = $interval->i;
       <div class="row gy-4">
         <div class="col-md-4 mb-1">
           <h2 class="mb-4">
-            <img src="assets/img/text-color-logo.png" alt="GYM.One" height="105">
+            <img src="https://GYM.One.com/assets/svg/logo-text.svg" alt="GYM.One" height="50">
           </h2>
 
           <p><?php echo $translations["herotext"]; ?></p>
@@ -461,7 +384,8 @@ $minutes = $interval->i;
           <ul class="list-unstyled links">
             <li><a href="<?php echo $github_url; ?>" target="_blank" rel="noopener noreferrer">GitHub</a></li>
             <li><a href="<?php echo $discord_url; ?>" target="_blank" rel="noopener noreferrer">Discord</a></li>
-            <li class="d-none"><a href="support/"><?php echo $translations["support-us"]; ?></a></li>
+            <li><a href="<?php echo $twitter_url; ?>" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+            <li><a href="support/"><?php echo $translations["support-us"]; ?></a></li>
           </ul>
         </div>
       </div>

@@ -31,13 +31,30 @@ if (file_exists($langFile)) {
 }
 ?>
 <?php
-$file_path = 'https://api.gymoneglobal.com/latest/version.txt';
+// GitHub repository URL
+$repo_url = 'https://api.github.com/repos/mayerbalintdev/Gym-one-installer/releases/latest';
 
+// Lekérdezés küldése a GitHub API-hoz
 $ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, $file_path);
+curl_setopt($ch, CURLOPT_URL, $repo_url);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-$latest_version = curl_exec($ch);
+curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5);
+curl_setopt($ch, CURLOPT_USERAGENT, 'PHP');
+
+$response = curl_exec($ch);
+$httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 curl_close($ch);
+
+// Ellenőrzés a válasz kódjára
+if ($httpcode == 200) {
+    // JSON válasz feldolgozása
+    $data = json_decode($response);
+
+    // Legfrissebb verziószám kinyerése
+    $latest_version = $data->tag_name;
+} else {
+    $latest_version = "Nincsen kiadás";
+}
 ?>
 
 <!DOCTYPE html>

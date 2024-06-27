@@ -1,8 +1,7 @@
 <?php
-session_start(); // Session kezdése vagy folytatása
-
 // DEF INFO
-$github_url = "https://github.com/mayerbalintdev/";
+
+$github_url = "";
 $discord_url = "";
 $twitter_url = "";
 
@@ -15,15 +14,12 @@ foreach ($langFiles as $file) {
     $languages[$code] = $code;
 }
 
-// Nyelv beállítás session-ben tárolása
+$lang = 'HU';
 if (isset($_GET['lang']) && file_exists($langDir . "{$_GET['lang']}.json")) {
-    $_SESSION['lang'] = $_GET['lang'];
+    $lang = $_GET['lang'];
 }
 
-// Ha a session-ben van tárolt nyelv, használjuk azt, különben alapértelmezett (HU)
-$lang = isset($_SESSION['lang']) ? $_SESSION['lang'] : 'HU';
 $langFile = $langDir . "$lang.json";
-
 if (file_exists($langFile)) {
     $translations = json_decode(file_get_contents($langFile), true);
 } else {
