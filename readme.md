@@ -30,11 +30,11 @@ For more examples, please see [Documentation](WEB).
  ## Roadmap
 
 - [ ] Add changelog
-- [ ] Publish on the World Wide Web
+- [+] Publish on the World Wide Web
 - [ ] Docs website
 - [ ] Multilingual support
-  - [ ] Hungarian
-  - [ ] English
+  - [+] Hungarian
+  - [+] English
   - [ ] 15+ additional languages
 
 
