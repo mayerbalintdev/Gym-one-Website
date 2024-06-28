@@ -28,7 +28,7 @@ if (file_exists($langFile)) {
 ?>
 
 <?php
-$target_date = new DateTime('2025-01-11 00:00:00');
+$target_date = new DateTime('2025-10-10 10:10:00');
 
 $current_date = new DateTime();
 $interval = $current_date->diff($target_date);
@@ -36,7 +36,24 @@ $interval = $current_date->diff($target_date);
 $days = $interval->days;
 $hours = $interval->h;
 $minutes = $interval->i;
+
+function convertNumPlaceholder($input) {
+  $conversion = array(
+      'num' => '<strong>1</strong>'
+  );
+
+  foreach ($conversion as $from => $to) {
+      $input = str_replace($from, $to, $input);
+  }
+
+  return $input;
+}
+
+$input_string = $translations["worldwide-main"];
+$output_string = convertNumPlaceholder($input_string);
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="hu">
@@ -48,7 +65,7 @@ $minutes = $interval->i;
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
   integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <link rel="shortcut icon" href="https://gymoneglobal.com/assets/img/logo.png" type="image/x-icon">
+<link rel="shortcut icon" href="https://gymoneglobal.com/assets/img/logo.png" type="image/x-icon">
 
 <meta name="description"
   content="GYM One is an open source web solution for gyms. Enjoy dozens of extensions for endless possibilities. Already trusted by more than 20 gyms with over 900 users.">
@@ -357,7 +374,7 @@ $minutes = $interval->i;
           </div>
 
           <h2 class="display-6 my-3 fw-semibold">
-            <?php echo $translations["worldwide-main"]; ?>
+            <?php echo $output_string; ?>
           </h2>
 
           <p class="lead">

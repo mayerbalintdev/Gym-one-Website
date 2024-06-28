@@ -1,0 +1,16 @@
+arab
+HR
+NL
+GB
+FR
+DE
+IN
+IT
+NO
+PL
+RO
+RS
+SK
+SI
+ES
+TR

@@ -6,7 +6,7 @@ $github_url = "https://github.com/mayerbalintdev/";
 $discord_url = "";
 $twitter_url = "";
 
-$langDir = __DIR__ . "/../assets/lang/";
+$langDir = __DIR__ . "/../../assets/lang/";
 $langFiles = glob($langDir . "*.json");
 $languages = [];
 
@@ -36,11 +36,11 @@ if (file_exists($langFile)) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GYMOne - <?php echo $translations['docspage']; ?></title>
-    <link rel="stylesheet" href="../assets/css/docs_style.css">
+    <link rel="stylesheet" href="../../assets/css/docs_style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-        <link rel="shortcut icon" href="https://gymoneglobal.com/assets/img/logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="https://gymoneglobal.com/assets/img/logo.png" type="image/x-icon">
 </head>
 
 <body>
@@ -48,8 +48,8 @@ if (file_exists($langFile)) {
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary-gradient">
         <div class="container">
-            <a class="navbar-brand" href="https://GYM.One.com/en/">
-                <img src="../assets/img/logo.png" height="45" width="45" alt="GYM.One">
+            <a class="navbar-brand" href="../../">
+                <img src="../../assets/img/logo.png" height="45" width="45" alt="GYM.One">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
                 aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -149,7 +149,7 @@ if (file_exists($langFile)) {
 
                         <li class="nav-item">
 
-                            <a class="nav-link active" href="#">
+                            <a class="nav-link " href="../">
                                 <?php echo $translations["mainpage"]; ?>
                             </a>
 
@@ -157,20 +157,20 @@ if (file_exists($langFile)) {
 
 
                         <li class="nav-item">
-                            <a class="nav-link " href="install/">
+                            <a class="nav-link" href="../install">
                                 <?php echo $translations["installpage"]; ?>
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link " href="https://azuriom.com/en/docs/server-link">
-                                Server link
+                            <a class="nav-link active" href="../langs">
+                                <?php echo $translations["translatepage"]; ?>
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link " href="faq/">
-                                <?php echo $translations["faqpage"]; ?>
+                            <a class="nav-link " href="https://azuriom.com/en/docs/faq">
+                                FAQ
                             </a>
                         </li>
 
@@ -182,7 +182,7 @@ if (file_exists($langFile)) {
 
                         <li class="nav-item">
                             <a class="nav-link " href="https://azuriom.com/en/docs/update">
-                                Azuriom 1.0
+                                GYM One 1.0
                             </a>
                         </li>
 
@@ -214,24 +214,37 @@ if (file_exists($langFile)) {
                     </ul>
                 </nav>
             </aside>
-
             <main class="col-md-9 col-xl-9 markdown-content">
-                <h1 id="home"><?php echo $translations["mainpage"]; ?></h1>
-                <h2 id="introduction">
-                    <a class="heading-permalink" href="#introduction"></a><?php echo $translations["introduction"]; ?>
+                <h1 id="sending-emails"><?php echo $translations["docssendmail"]; ?></h1>
+                <p><?php echo $translations["docssmtpheader"]; ?></p>
+                <h2 id="smtp-google">
+                    <a class="heading-permalink" href="#smtp-google"></a>Google SMTP
                 </h2>
-                <p><?php echo $translations["introduction_first"]; ?></p>
-                <p><?php echo $translations["introduction_second"]; ?></p>
-                <p><?php echo $translations["introduction_third"]; ?></p>
-                <h2 id="credits">
-                    <a class="heading-permalink" href="#credits"></a><?php echo $translations["credits"]; ?>
+                <p><?php echo $translations["docsemailgoogletilt"]; ?></p>
+                <ol>
+                    <li><?php echo $translations["logingoogle"]; ?></li>
+                    <li><?php echo $translations["logingooglesecond"]; ?></li>
+                    <li><?php echo $translations["logingooglethird"]; ?></li>
+                    <li><?php echo $translations["logingooglefourth"]; ?></li>
+                    <li><?php echo $translations["logingooglefifth"]; ?></li>
+                </ol>
+                <h2 id="default-settings">
+                    <a class="heading-permalink"
+                        href="#default-settings"></a><?php echo $translations["smptsettings"]; ?>
                 </h2>
-                <p><?php echo $translations["credits_first"]; ?></p>
-                <h3 id="donors">
-                    <a class="heading-permalink" href="#donors"></a><?php echo $translations["donors"]; ?>
-                </h3>
-                <p><?php echo $translations["donors_first"]; ?>
-                </p>
+                <p><?php echo $translations["smtpsettingsheader"]; ?></p>
+                <pre tabindex="0"><code>MAIL_HOST= smtp.gmail.com
+MAIL_PORT= 465
+MAIL_USERNAME= <?php echo $translations["youremailexample"]; ?> 
+MAIL_PASSWORD= <?php echo $translations["youremailpasswordexample"]; ?> 
+MAIL_ENCRYPTION= SSL</code></pre>
+                <h2 id="testemail"><a class="heading-permalink" href="#testemail"></a>
+                    <?php echo $translations["testyoursmtp"]; ?>
+                </h2>
+                <ol>
+                    <li><?php echo $translations["checkyoursmtp"]; ?></li>
+                    <li><?php echo $translations["smtptestemailsenddocs"];?></li>
+                </ol>
             </main>
         </div>
 
@@ -248,7 +261,7 @@ if (file_exists($langFile)) {
             <div class="row gy-4">
                 <div class="col-md-4 mb-1">
                     <h2 class="mb-4">
-                        <img src="https://GYM.One.com/assets/svg/logo-text.svg" alt="GYM.One" height="50">
+                        <img src="../../assets/img/text-color-logo.png" alt="GYM.One" height="105">
                     </h2>
 
                     <p><?php echo $translations["herotext"]; ?></p>
@@ -265,9 +278,7 @@ if (file_exists($langFile)) {
                         </li>
                         <li><a href="<?php echo $discord_url; ?>" target="_blank" rel="noopener noreferrer">Discord</a>
                         </li>
-                        <li><a href="<?php echo $twitter_url; ?>" target="_blank" rel="noopener noreferrer">Twitter</a>
-                        </li>
-                        <li><a href="support/"><?php echo $translations["support-us"]; ?></a></li>
+                        <li class="d-none"><a href="support/"><?php echo $translations["support-us"]; ?></a></li>
                     </ul>
                 </div>
             </div>
@@ -285,6 +296,7 @@ if (file_exists($langFile)) {
                 </p>
             </div>
         </div>
+    </div>
     </div>
     <script>
         function changeLanguage(lang) {

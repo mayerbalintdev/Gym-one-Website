@@ -6,7 +6,7 @@ $github_url = "https://github.com/mayerbalintdev/";
 $discord_url = "";
 $twitter_url = "";
 
-$langDir = __DIR__ . "/../assets/lang/";
+$langDir = __DIR__ . "/../../assets/lang/";
 $langFiles = glob($langDir . "*.json");
 $languages = [];
 
@@ -36,7 +36,7 @@ if (file_exists($langFile)) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GYMOne - <?php echo $translations['docspage']; ?></title>
-    <link rel="stylesheet" href="../assets/css/docs_style.css">
+    <link rel="stylesheet" href="../../assets/css/docs_style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -48,8 +48,8 @@ if (file_exists($langFile)) {
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary-gradient">
         <div class="container">
-            <a class="navbar-brand" href="https://GYM.One.com/en/">
-                <img src="../assets/img/logo.png" height="45" width="45" alt="GYM.One">
+            <a class="navbar-brand" href="../../">
+                <img src="../../assets/img/logo.png" height="45" width="45" alt="GYM.One">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
                 aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -149,7 +149,7 @@ if (file_exists($langFile)) {
 
                         <li class="nav-item">
 
-                            <a class="nav-link active" href="#">
+                            <a class="nav-link " href="../">
                                 <?php echo $translations["mainpage"]; ?>
                             </a>
 
@@ -157,20 +157,20 @@ if (file_exists($langFile)) {
 
 
                         <li class="nav-item">
-                            <a class="nav-link " href="install/">
+                            <a class="nav-link active" href="#">
                                 <?php echo $translations["installpage"]; ?>
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link " href="https://azuriom.com/en/docs/server-link">
-                                Server link
+                            <a class="nav-link " href="../langs">
+                                <?php echo $translations["langs"];?>
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link " href="faq/">
-                                <?php echo $translations["faqpage"]; ?>
+                            <a class="nav-link " href="https://azuriom.com/en/docs/faq">
+                                FAQ
                             </a>
                         </li>
 
@@ -216,22 +216,98 @@ if (file_exists($langFile)) {
             </aside>
 
             <main class="col-md-9 col-xl-9 markdown-content">
-                <h1 id="home"><?php echo $translations["mainpage"]; ?></h1>
-                <h2 id="introduction">
-                    <a class="heading-permalink" href="#introduction"></a><?php echo $translations["introduction"]; ?>
+                <h1 id="installation"><?php echo $translations["installpage"]; ?></h1>
+                <h2 id="requirements">
+                    <a class="heading-permalink" href="#requirements"></a><?php echo $translations["requirements"]; ?>
                 </h2>
-                <p><?php echo $translations["introduction_first"]; ?></p>
-                <p><?php echo $translations["introduction_second"]; ?></p>
-                <p><?php echo $translations["introduction_third"]; ?></p>
-                <h2 id="credits">
-                    <a class="heading-permalink" href="#credits"></a><?php echo $translations["credits"]; ?>
+                <p><?php echo $translations["requirements-header"]; ?></p>
+                <ul>
+                    <li><?php echo $translations["phpverorhigh"]; ?></li>
+                    <li>URL Rewrite</li>
+                    <li>BCMath PHP <?php echo $translations["extension"]; ?></li>
+                    <li>Ctype PHP <?php echo $translations["extension"]; ?></li>
+                    <li>JSON PHP <?php echo $translations["extension"]; ?></li>
+                    <li>Mbstring PHP <?php echo $translations["extension"]; ?></li>
+                    <li>OpenSSL PHP <?php echo $translations["extension"]; ?></li>
+                    <li>PDO PHP <?php echo $translations["extension"]; ?></li>
+                    <li>Tokenizer PHP <?php echo $translations["extension"]; ?></li>
+                    <li>XML PHP <?php echo $translations["extension"]; ?></li>
+                    <li>XMLWriter PHP <?php echo $translations["extension"]; ?></li>
+                    <li>cURL PHP <?php echo $translations["extension"]; ?></li>
+                    <li>Zip PHP <?php echo $translations["extension"]; ?></li>
+                </ul>
+                <p><?php echo $translations["recomendsql"]; ?></p>
+                <h2 id="requirements-installation-on-a-linux-based-server">
+                    <a class="heading-permalink"
+                        href="#requirements-installation-on-a-linux-based-server"></a><?php echo $translations["linuxbased"]; ?>
                 </h2>
-                <p><?php echo $translations["credits_first"]; ?></p>
-                <h3 id="donors">
-                    <a class="heading-permalink" href="#donors"></a><?php echo $translations["donors"]; ?>
+                <p><?php echo $translations["sharedserver"]; ?></p>
+                <p><?php echo $translations["vpsserver"]; ?></p>
+                <pre tabindex="0"><code>MAJD</code></pre>
+
+                <p><?php echo $translations["websetting"]; ?></p>
+
+                <h2 id="installation-1">
+                    <a class="heading-permalink" href="#installation-1"></a><?php echo $translations["installpage"]; ?>
+                </h2>
+                <p><?php echo $translations["downloadscript"]; ?></p>
+                <ol>
+                    <li>
+                        <p><?php echo $translations["installatestver"]; ?></p>
+                    </li>
+                    <li>
+                        <p><?php echo $translations["extract"]; ?></p>
+                    </li>
+                    <li>
+                        <p><?php echo $translations["readwrite"]; ?></p>
+                        <pre tabindex="0"><code>chmod -R 755 /var/www/gymone</code></pre>
+                        <p>
+                            <?php echo $translations["replacewww"]; ?>
+                        </p>
+                        <pre tabindex="0"><code>chown -R www-data:www-data /var/www/gymone</code></pre>
+                        <p><?php echo $translations["replaceyourdata"]; ?></p>
+                    </li>
+                    <li>
+                        <p><?php echo $translations["followinstall"]; ?></p>
+                    </li>
+                </ol>
+                <blockquote class="alert alert-secondary d-flex align-items-center documentation-alert">
+                    <div class="flex-shrink-0">
+                        <div class="fs-3 lh-1 text-warning border border-warning border-2 p-3 rounded-pill">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-exclamation-triangle" viewBox="0 0 16 16">
+                                <path
+                                    d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z">
+                                </path>
+                                <path
+                                    d="M7.002 12a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 5.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z">
+                                </path>
+                            </svg>
+
+                        </div>
+                    </div>
+                    <div class="flex-grow-1 ms-3 text-body"><?php echo $translations["ipcatch"]; ?></div>
+                </blockquote>
+
+                <h2 id="web-server-configuration">
+                    <a class="heading-permalink" href="#web-server-configuration"></a><?php echo $translations["webserverconf"];?>
+                </h2>
+                <h3 id="apache2">
+                    <a class="heading-permalink" href="#apache2"></a>Apache2
                 </h3>
-                <p><?php echo $translations["donors_first"]; ?>
-                </p>
+                <p><?php echo $translations["apachetworewrite"];?></p>
+                <p><?php echo $translations["rewriteallow"];?></p>
+                <pre tabindex="0"><code>a2enmod rewrite</code></pre>
+                <p><?php echo $translations["apacheconfigexample"];?></p>
+                <pre tabindex="0"><code>&lt;Directory "/var/www/gymone"&gt;
+    Options FollowSymLinks
+    AllowOverride All
+    Require all granted
+&lt;/Directory&gt;
+</code></pre>
+
+                <p><?php echo $translations["finalyrestartapache"];?></p>
+                <pre tabindex="0"><code>service apache2 restart</code></pre>
             </main>
         </div>
 
@@ -248,7 +324,7 @@ if (file_exists($langFile)) {
             <div class="row gy-4">
                 <div class="col-md-4 mb-1">
                     <h2 class="mb-4">
-                        <img src="https://GYM.One.com/assets/svg/logo-text.svg" alt="GYM.One" height="50">
+                        <img src="../../assets/img/text-color-logo.png" alt="GYM.One" height="105">
                     </h2>
 
                     <p><?php echo $translations["herotext"]; ?></p>
@@ -265,9 +341,7 @@ if (file_exists($langFile)) {
                         </li>
                         <li><a href="<?php echo $discord_url; ?>" target="_blank" rel="noopener noreferrer">Discord</a>
                         </li>
-                        <li><a href="<?php echo $twitter_url; ?>" target="_blank" rel="noopener noreferrer">Twitter</a>
-                        </li>
-                        <li><a href="support/"><?php echo $translations["support-us"]; ?></a></li>
+                        <li class="d-none"><a href="support/"><?php echo $translations["support-us"]; ?></a></li>
                     </ul>
                 </div>
             </div>
@@ -285,6 +359,7 @@ if (file_exists($langFile)) {
                 </p>
             </div>
         </div>
+    </div>
     </div>
     <script>
         function changeLanguage(lang) {
