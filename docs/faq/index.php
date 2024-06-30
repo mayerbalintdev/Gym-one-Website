@@ -157,76 +157,51 @@ if (file_exists($langFile)) {
 
 
                         <li class="nav-item">
-                            <a class="nav-link active" href="#">
+                            <a class="nav-link" href="../install/">
                                 <?php echo $translations["installpage"]; ?>
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link " href="../langs/">
+                            <a class="nav-link active" href="#">
                                 <?php echo $translations["translatepage"]; ?>
                             </a>
                         </li>
                     </ul>
                 </nav>
             </aside>
-
             <main class="col-md-9 col-xl-9 markdown-content">
-                <h1 id="installation"><?php echo $translations["installpage"]; ?></h1>
-                <h2 id="requirements">
-                    <a class="heading-permalink" href="#requirements"></a><?php echo $translations["requirements"]; ?>
-                </h2>
-                <p><?php echo $translations["requirements-header"]; ?></p>
-                <ul>
-                    <li><?php echo $translations["phpverorhigh"]; ?></li>
-                    <li>URL Rewrite</li>
-                    <li>BCMath PHP <?php echo $translations["extension"]; ?></li>
-                    <li>Ctype PHP <?php echo $translations["extension"]; ?></li>
-                    <li>JSON PHP <?php echo $translations["extension"]; ?></li>
-                    <li>Mbstring PHP <?php echo $translations["extension"]; ?></li>
-                    <li>OpenSSL PHP <?php echo $translations["extension"]; ?></li>
-                    <li>PDO PHP <?php echo $translations["extension"]; ?></li>
-                    <li>Tokenizer PHP <?php echo $translations["extension"]; ?></li>
-                    <li>XML PHP <?php echo $translations["extension"]; ?></li>
-                    <li>XMLWriter PHP <?php echo $translations["extension"]; ?></li>
-                    <li>cURL PHP <?php echo $translations["extension"]; ?></li>
-                    <li>Zip PHP <?php echo $translations["extension"]; ?></li>
-                </ul>
-                <p><?php echo $translations["recomendsql"]; ?></p>
-                <h2 id="requirements-installation-on-a-linux-based-server">
+                <h1 id="faq"><?php echo $translations["faqpage"]; ?></h1>
+                <p><?php echo $translations["notweerrorfaq"]; ?></p>
+                <h2 id="the-home-page-works-but-the-other-pages-produce-a-404-error">
                     <a class="heading-permalink"
-                        href="#requirements-installation-on-a-linux-based-server"></a><?php echo $translations["linuxbased"]; ?>
+                        href="#the-home-page-works-but-the-other-pages-produce-a-404-error"></a><?php echo $translations["faq404"]; ?>
                 </h2>
-                <p><?php echo $translations["sharedserver"]; ?></p>
-                <p><?php echo $translations["vpsserver"]; ?></p>
-                <pre tabindex="0"><code>MAJD</code></pre>
-
-                <p><?php echo $translations["websetting"]; ?></p>
-
-                <h2 id="installation-1">
-                    <a class="heading-permalink" href="#installation-1"></a><?php echo $translations["installpage"]; ?>
+                <p><?php echo $translations["faq404solution"]; ?></p>
+                <h2 id="apache2-url-rewrite">
+                    <a class="heading-permalink" href="#apache2-url-rewrite"></a>Apache2 URL rewrite
                 </h2>
-                <p><?php echo $translations["downloadscript"]; ?></p>
-                <ol>
-                    <li>
-                        <p><?php echo $translations["installatestver"]; ?></p>
-                    </li>
-                    <li>
-                        <p><?php echo $translations["extract"]; ?></p>
-                    </li>
-                    <li>
-                        <p><?php echo $translations["readwrite"]; ?></p>
-                        <pre tabindex="0"><code>chmod -R 755 /var/www/gymone</code></pre>
-                        <p>
-                            <?php echo $translations["replacewww"]; ?>
-                        </p>
-                        <pre tabindex="0"><code>chown -R www-data:www-data /var/www/gymone</code></pre>
-                        <p><?php echo $translations["replaceyourdata"]; ?></p>
-                    </li>
-                    <li>
-                        <p><?php echo $translations["followinstall"]; ?></p>
-                    </li>
-                </ol>
+                <p><?php echo $translations["faqrewritesolution"]; ?>
+                <pre tabindex="0"><code>&lt;Directory "/var/www/html"&gt;
+  AllowOverride All
+&lt;/Directory&gt;
+</code></pre>
+                <p><?php echo $translations["faqrewritehowto"]; ?></p>
+                <pre tabindex="0"><code>a2enmod rewrite
+</code></pre>
+                <p><?php echo $translations["faqrewriterestart"]; ?></p>
+                <pre tabindex="0"><code>service apache2 restart
+</code></pre>
+
+                <h2 id="the-file-has-not-been-uploaded-when-uploading-an-image">
+                    <a class="heading-permalink"
+                        href="#the-file-has-not-been-uploaded-when-uploading-an-image"></a><?php echo $translations["faquploadsize"]; ?>
+                </h2>
+                <p><?php echo $translations["faquploadsizeheader"]; ?></p>
+                <p><?php echo $translations["faquploadsizeheadertwo"]; ?></p>
+                <pre tabindex="1"><code>upload_max_filesize = 10M
+post_max_size = 10M
+</code></pre>
                 <blockquote class="alert alert-secondary d-flex align-items-center documentation-alert">
                     <div class="flex-shrink-0">
                         <div class="fs-3 lh-1 text-warning border border-warning border-2 p-3 rounded-pill">
@@ -242,29 +217,22 @@ if (file_exists($langFile)) {
 
                         </div>
                     </div>
-                    <div class="flex-grow-1 ms-3 text-body"><?php echo $translations["ipcatch"]; ?></div>
+                    <div class="flex-grow-1 ms-3 text-body"><?php echo $translations["faquploadsizereduce"]; ?></div>
                 </blockquote>
-
-                <h2 id="web-server-configuration">
+                <h2 id="force-https-on-apache2">
                     <a class="heading-permalink"
-                        href="#web-server-configuration"></a><?php echo $translations["webserverconf"]; ?>
+                        href="#force-https-on-apache2"></a><?php echo $translations["faqhttpsredircet"]; ?>
                 </h2>
-                <h3 id="apache2">
-                    <a class="heading-permalink" href="#apache2"></a>Apache2
-                </h3>
-                <p><?php echo $translations["apachetworewrite"]; ?></p>
-                <p><?php echo $translations["rewriteallow"]; ?></p>
-                <pre tabindex="0"><code>a2enmod rewrite</code></pre>
-                <p><?php echo $translations["apacheconfigexample"]; ?></p>
-                <pre tabindex="0"><code>&lt;Directory "/var/www/gymone"&gt;
-    Options FollowSymLinks
-    AllowOverride All
-    Require all granted
-&lt;/Directory&gt;
+                <p><?php echo $translations["faqhttpssolution"]; ?>
+                </p>
+                <pre tabindex="0"><code>RewriteCond %{HTTPS} off
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R,L]
 </code></pre>
-
-                <p><?php echo $translations["finalyrestartapache"]; ?></p>
-                <pre tabindex="0"><code>service apache2 restart</code></pre>
+                <h2 id="change-the-database-credentials">
+                    <a class="heading-permalink"
+                        href="#change-the-database-credentials"></a><?php echo $translations["faqdatabase"]; ?>
+                </h2>
+                <p><?php echo $translations["faqdatabasesolution"]; ?></p>
             </main>
         </div>
 
@@ -297,6 +265,8 @@ if (file_exists($langFile)) {
                         <li><a href="<?php echo $github_url; ?>" target="_blank" rel="noopener noreferrer">GitHub</a>
                         </li>
                         <li><a href="<?php echo $discord_url; ?>" target="_blank" rel="noopener noreferrer">Discord</a>
+                        </li>
+                        <li class="d-none"><a href="support/"><?php echo $translations["support-us"]; ?></a></li>
                     </ul>
                 </div>
             </div>

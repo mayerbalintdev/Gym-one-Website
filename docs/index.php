@@ -163,54 +163,10 @@ if (file_exists($langFile)) {
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link " href="https://azuriom.com/en/docs/server-link">
-                                Server link
+                            <a class="nav-link " href="langs/">
+                                <?php echo $translations["translatepage"];?>
                             </a>
                         </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link " href="faq/">
-                                <?php echo $translations["faqpage"]; ?>
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link " href="https://azuriom.com/en/docs/api-auth">
-                                Auth API
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link " href="https://azuriom.com/en/docs/update">
-                                Azuriom 1.0
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link " href="https://azuriom.com/en/docs/games">
-                                Custom games
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link " href="https://azuriom.com/en/docs/mails">
-                                Mails
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link " href="https://azuriom.com/en/docs/plugins">
-                                Plugins
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link " href="https://azuriom.com/en/docs/themes">
-                                Themes
-                            </a>
-                        </li>
-
-
                     </ul>
                 </nav>
             </aside>
@@ -248,7 +204,7 @@ if (file_exists($langFile)) {
             <div class="row gy-4">
                 <div class="col-md-4 mb-1">
                     <h2 class="mb-4">
-                        <img src="https://GYM.One.com/assets/svg/logo-text.svg" alt="GYM.One" height="50">
+                        <img src="../assets/img/text-color-logo.png" alt="GYM.One" height="105">
                     </h2>
 
                     <p><?php echo $translations["herotext"]; ?></p>
@@ -265,9 +221,7 @@ if (file_exists($langFile)) {
                         </li>
                         <li><a href="<?php echo $discord_url; ?>" target="_blank" rel="noopener noreferrer">Discord</a>
                         </li>
-                        <li><a href="<?php echo $twitter_url; ?>" target="_blank" rel="noopener noreferrer">Twitter</a>
-                        </li>
-                        <li><a href="support/"><?php echo $translations["support-us"]; ?></a></li>
+                        <li class="d-none"><a href="support/"><?php echo $translations["support-us"]; ?></a></li>
                     </ul>
                 </div>
             </div>

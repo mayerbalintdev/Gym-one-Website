@@ -149,7 +149,7 @@ if (file_exists($langFile)) {
 
                         <li class="nav-item">
 
-                            <a class="nav-link " href="../">
+                            <a class="nav-link" href="../">
                                 <?php echo $translations["mainpage"]; ?>
                             </a>
 
@@ -157,60 +157,16 @@ if (file_exists($langFile)) {
 
 
                         <li class="nav-item">
-                            <a class="nav-link" href="../install">
+                            <a class="nav-link" href="../install/">
                                 <?php echo $translations["installpage"]; ?>
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link active" href="../langs">
+                            <a class="nav-link active" href="#">
                                 <?php echo $translations["translatepage"]; ?>
                             </a>
                         </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link " href="https://azuriom.com/en/docs/faq">
-                                FAQ
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link " href="https://azuriom.com/en/docs/api-auth">
-                                Auth API
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link " href="https://azuriom.com/en/docs/update">
-                                GYM One 1.0
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link " href="https://azuriom.com/en/docs/games">
-                                Custom games
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link " href="https://azuriom.com/en/docs/mails">
-                                Mails
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link " href="https://azuriom.com/en/docs/plugins">
-                                Plugins
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link " href="https://azuriom.com/en/docs/themes">
-                                Themes
-                            </a>
-                        </li>
-
-
                     </ul>
                 </nav>
             </aside>
@@ -243,7 +199,7 @@ MAIL_ENCRYPTION= SSL</code></pre>
                 </h2>
                 <ol>
                     <li><?php echo $translations["checkyoursmtp"]; ?></li>
-                    <li><?php echo $translations["smtptestemailsenddocs"];?></li>
+                    <li><?php echo $translations["smtptestemailsenddocs"]; ?></li>
                 </ol>
             </main>
         </div>
