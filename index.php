@@ -122,7 +122,11 @@ $output_string = convertNumPlaceholder($input_string);
               <?php echo $translations["mainpage"]; ?>
             </a>
           </li>
-
+          <li class="nav-item">
+            <a class="nav-link " href="contact/">
+              <?php echo $translations["contactpage"]; ?>
+            </a>
+          </li>
           <li class="d-none nav-item">
             <a class="nav-link " href="download/">
               <?php echo $translations["downloadpage"]; ?>
@@ -439,7 +443,7 @@ $output_string = convertNumPlaceholder($input_string);
                 </button>
               </h2>
               <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
-                data-bs-parent="#accordionFlushExample" style="">
+                data-bs-parent="#accordionFlushExample">
                 <div class="accordion-body"><?php echo $translations["third_faq-ans"]; ?>
                 </div>
               </div>
