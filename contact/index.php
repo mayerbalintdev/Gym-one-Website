@@ -60,7 +60,7 @@ $output_string = convertNumPlaceholder($input_string);
 <html lang="hu">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GYMOne - <?php echo $translations['mainpage']; ?></title>
+<title>GYMOne - <?php echo $translations['contactpage']; ?></title>
 <link rel="stylesheet" href="../assets/css/style.css">
 <link rel="shortcut icon" href="http://gymoneglobal.com/assets/img/logo.png" type="image/x-icon">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -79,14 +79,14 @@ $output_string = convertNumPlaceholder($input_string);
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@GYMOne">
 <meta name="twitter:creator" content="@GYMOne">
-<meta name="twitter:title" content="Home">
+<meta name="twitter:title" content="Contact">
 <meta name="twitter:description"
     content="GYM One is an open source web solution for gyms. Enjoy dozens of extensions for endless possibilities. Already trusted by more than 20 gyms with over 900 users.">
 <meta name="twitter:image" content="http://gymoneglobal.com/assets/img/logo.png">
 
-<meta property="og:title" content="Homepage">
+<meta property="og:title" content="Contact">
 <meta property="og:type" content="website">
-<meta property="og:url" content="http://gymoneglobal.com/">
+<meta property="og:url" content="http://gymoneglobal.com/contact">
 <meta property="og:site_name" content="GYM One">
 <meta property="og:description"
     content="GYM One is an open source web solution for gyms. Enjoy dozens of extensions for endless possibilities. Already trusted by more than 20 gyms with over 900 users.">
