@@ -2,7 +2,7 @@
 <br/>
 <div align="center">
 <a href="https://mayerbalint.hu">
-<img src="https://cloud.mayerbalint.hu/gym_One.png" alt="Logo" width="80" height="80">
+<img src="https://gymoneglobal.com/assets/img/logo.png" alt="Logo" width="80" height="80">
 </a>
 <h3 align="center">GYM One - Website</h3>
 <p align="center">
@@ -12,7 +12,7 @@ GYM One Website is a PHP based website
 <a href="https://github.com/mayerbalintdev/Gym-one-Website"><strong>Explore the docs »</strong></a>
 <br/>
 <br/>
-<a href="#">View Demo .</a>  
+<a href="https://demo.gymoneglobal.com/">View Demo</a>  
 </p>
 </div>
 
@@ -30,12 +30,12 @@ For more examples, please see [Documentation](WEB).
  ## Roadmap
 
 - [ ] Add changelog
-- [+] Publish on the World Wide Web
+- [ ] Publish on the World Wide Web
 - [ ] Docs website
 - [ ] Multilingual support
   - [+] Hungarian
   - [+] English
-  - [ ] 15+ additional languages
+  - [ ] 20+ additional languages
 
 
 See the [open issues](https://github.com/mayerbalintweb/Gym-one-Website/issues) for a full list of proposed features (and known issues).
@@ -51,7 +51,7 @@ Don't forget to give the project a star! Thanks again!
 
  ## Contact
 
-Mayer Bálint - mayerbalintweb@gmail.com
+Mayer Bálint - center@gymoneglobal.com
  ## Acknowledgments
 
 We use several special codes, thanks a lot to them:
