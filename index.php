@@ -59,7 +59,7 @@ $output_string = convertNumPlaceholder($input_string);
 <html lang="hu">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GYMOne - <?php echo $translations['mainpage']; ?></title>
+<title>GYM One - <?php echo $translations['mainpage']; ?></title>
 <link rel="stylesheet" href="assets/css/style.css">
 <link rel="shortcut icon" href="http://gymoneglobal.com/assets/img/logo.png" type="image/x-icon">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">

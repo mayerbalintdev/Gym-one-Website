@@ -161,10 +161,19 @@ if (file_exists($langFile)) {
                                 <?php echo $translations["installpage"]; ?>
                             </a>
                         </li>
-
+                        <li class="nav-item">
+                            <a class="nav-link " href="faq/">
+                                <?php echo $translations["faqpage"];?>
+                            </a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link " href="langs/">
                                 <?php echo $translations["translatepage"];?>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="legal/">
+                                <?php echo $translations["legalpage"];?>
                             </a>
                         </li>
                     </ul>
