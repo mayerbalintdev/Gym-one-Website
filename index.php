@@ -37,13 +37,21 @@ $days = $interval->days;
 $hours = $interval->h;
 $minutes = $interval->i;
 
+function getDownloadCount() {
+  $apiUrl = 'https://api.gymoneglobal.com/GET/DownloadCount';
+  $response = file_get_contents($apiUrl);
+  $data = json_decode($response, true);
+  return $data['downloadCount'] ?? 0+21;
+}
+
 function convertNumPlaceholder($input) {
+  $downloadCount = getDownloadCount();
   $conversion = array(
-      'num' => '<strong>1</strong>'
+    'num' => "<strong>$downloadCount</strong>"
   );
 
   foreach ($conversion as $from => $to) {
-      $input = str_replace($from, $to, $input);
+    $input = str_replace($from, $to, $input);
   }
 
   return $input;
@@ -95,7 +103,10 @@ $output_string = convertNumPlaceholder($input_string);
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-75NV275ZQS"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag() { dataLayer.push(arguments); }
+
+  function gtag() {
+    dataLayer.push(arguments);
+  }
   gtag('js', new Date());
 
   gtag('config', 'G-75NV275ZQS');
@@ -127,13 +138,13 @@ $output_string = convertNumPlaceholder($input_string);
               <?php echo $translations["contactpage"]; ?>
             </a>
           </li>
-          <li class="d-none nav-item">
+          <li class="nav-item">
             <a class="nav-link " href="download/">
               <?php echo $translations["downloadpage"]; ?>
             </a>
           </li>
 
-          <li class="d-none nav-item">
+          <li class="nav-item">
             <a class="nav-link " href="docs/">
               <?php echo $translations["docspage"]; ?>
             </a>
@@ -200,8 +211,8 @@ $output_string = convertNumPlaceholder($input_string);
       </div>
       <div class="row text-center">
         <div class="col">
-          <a class="btn d-none btn-primary pulse mx-2 mb-4" href="download/"
-            role="button"><?php echo $translations['downloadbtn']; ?> <i class="bi bi-rocket-takeoff"></i></a>
+          <!-- <a class="btn btn-primary pulse mx-2 mb-4" href="download/"
+            role="button"><?php echo $translations['downloadbtn']; ?> <i class="bi bi-rocket-takeoff"></i></a> -->
           <a class="btn btn-secondary mx-2 mb-4" href="#info" role="button"><i class="bi bi-plus-lg"></i></i>
             <?php echo $translations['secondbtn']; ?></a>
         </div>
@@ -304,7 +315,7 @@ $output_string = convertNumPlaceholder($input_string);
       </div>
     </div>
   </section>
-  <!-- <div class="bg-body-info">
+  <div class="bg-body-info">
     <svg viewBox="0 0 1000 70" xmlns="http://www.w3.org/2000/svg" fill="url(#gradient)" class="section-waves">
       <defs>
         <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -316,13 +327,13 @@ $output_string = convertNumPlaceholder($input_string);
         d="M439.407,12.801c-80.921,15.363 -167.082,18.455 -248.277,2.849c-80.448,-15.463 -119.602,-14.391 -191.13,-14.391l0,68.741l1000,0l0,-68.741c-93.992,-8.581 -127.476,35.688 -278.561,19.139c-151.084,-16.548 -201.114,-22.958 -282.035,-7.597l0.003,0Z">
       </path>
     </svg>
-  </div> -->
+  </div>
   <!-- 2.resz -->
-  <!-- <section id="community">
+  <section id="community">
     <div class="container">
       <div class="row gy-4 justify-content-between text-start">
         <div class="col-md-5 align-self-center">
-          <img src="https://GYM.One.com/assets/img/theme.png" alt="Theme" class="img-fluid image-3d rounded-3"
+          <img src="assets/img/showcase/main_showcase.png" alt="Theme" class="img-fluid image-3d rounded-3"
             width="700" height="474">
         </div>
 
@@ -357,9 +368,9 @@ $output_string = convertNumPlaceholder($input_string);
         d="M439.407,12.801c-80.921,15.363 -167.082,18.455 -248.277,2.849c-80.448,-15.463 -119.602,-14.391 -191.13,-14.391l0,68.741l1000,0l0,-68.741c-93.992,-8.581 -127.476,35.688 -278.561,19.139c-151.084,-16.548 -201.114,-22.958 -282.035,-7.597l0.003,0Z">
       </path>
     </svg>
-  </div> -->
+  </div>
   <!-- 3.resz -->
-  <!-- <section id="worldwide">
+  <section id="worldwide">
     <div class="container">
       <div class="row gy-4 justify-content-between text-start">
         <div class="col-md-4 offset-md-1 align-self-center">
@@ -390,71 +401,71 @@ $output_string = convertNumPlaceholder($input_string);
         </div>
       </div>
     </div>
-  </section> -->
-  <section id="worldwide">
-    <div class="container">
-      <div class="row gy-4 justify-content-between text-start">
-        <div class="col-md-4 mt-5 offset-md-1 align-self-center">
-          <img src="assets/img/map.svg" alt="World" class="img-fluid" height="500" width="500">
-        </div>
-
-        <div class="col-md-6">
-          <div class="d-inline-block fs-1 lh-1 text-info bg-info bg-opacity-25 p-4 rounded-pill">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-              class="bi bi-question-circle" viewBox="0 0 16 16">
-              <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
-              <path
-                d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286m1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94" />
-            </svg>
-
+  </section>
+    <!-- <section id="worldwide">
+      <div class="container">
+        <div class="row gy-4 justify-content-between text-start">
+          <div class="col-md-4 mt-5 offset-md-1 align-self-center">
+            <img src="assets/img/map.svg" alt="World" class="img-fluid" height="500" width="500">
           </div>
-          <div class="mt-5"></div>
-          <div class="accordion accordion-flush" id="accordionFlushExample">
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="flush-headingOne">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                  <?php echo $translations["first_faq"]; ?>
-                </button>
-              </h2>
-              <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
-                data-bs-parent="#accordionFlushExample">
-                <div class="accordion-body"><?php echo $translations["first_faq-ans"]; ?></div>
-              </div>
+
+          <div class="col-md-6">
+            <div class="d-inline-block fs-1 lh-1 text-info bg-info bg-opacity-25 p-4 rounded-pill">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-question-circle" viewBox="0 0 16 16">
+                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                <path
+                  d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286m1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94" />
+              </svg>
+
             </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="flush-headingTwo">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                  <?php echo $translations["second_faq"]; ?>
-                </button>
-              </h2>
-              <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
-                data-bs-parent="#accordionFlushExample">
-                <div class="accordion-body"><?php echo $translations["second_faq-ans"]; ?>
+            <div class="mt-5"></div>
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingOne">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                    <?php echo $translations["first_faq"]; ?>
+                  </button>
+                </h2>
+                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+                  data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body"><?php echo $translations["first_faq-ans"]; ?></div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingTwo">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                    <?php echo $translations["second_faq"]; ?>
+                  </button>
+                </h2>
+                <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
+                  data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body"><?php echo $translations["second_faq-ans"]; ?>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingThree">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                    <?php echo $translations["third_faq"]; ?>
+                  </button>
+                </h2>
+                <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
+                  data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body"><?php echo $translations["third_faq-ans"]; ?>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="flush-headingThree">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                  <?php echo $translations["third_faq"]; ?>
-                </button>
-              </h2>
-              <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
-                data-bs-parent="#accordionFlushExample">
-                <div class="accordion-body"><?php echo $translations["third_faq-ans"]; ?>
-                </div>
-              </div>
-            </div>
-          </div>
 
+          </div>
         </div>
       </div>
-    </div>
-    </div>
-  </section>
+      </div>
+    </section> -->
   <!-- FOOTER -->
   <div class="footer-waves">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 8" fill="#252525">
@@ -474,6 +485,8 @@ $output_string = convertNumPlaceholder($input_string);
         </div>
         <div class="col-md-3 offset-md-1">
           <h2 class="text-light mb-4"></h2>
+          <img src="assets/img/goUpcAPI.svg" alt="GYM.One" class="img img-fluid" height="105">
+
         </div>
 
         <div class="col-md-2 offset-md-1">
@@ -482,14 +495,14 @@ $output_string = convertNumPlaceholder($input_string);
           <ul class="list-unstyled links">
             <li><a href="<?php echo $github_url; ?>" target="_blank" rel="noopener noreferrer">GitHub</a></li>
             <li><a href="<?php echo $discord_url; ?>" target="_blank" rel="noopener noreferrer">Discord</a></li>
-            <li class="d-none"><a href="support/"><?php echo $translations["support-us"]; ?></a></li>
+            <li><a href="support/"><?php echo $translations["support-us"]; ?></a></li>
           </ul>
         </div>
       </div>
 
       <div class="border-top border-secondary pt-3 mt-3">
         <p class="small text-center mb-0">
-          Copyright © 2024 GYM One - <?php echo $translations["copyright"]; ?>. &nbsp;<svg
+          Copyright © 2024-2025 GYM One - <?php echo $translations["copyright"]; ?>. &nbsp;<svg
             xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill"
             viewBox="0 0 16 16">
             <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314">

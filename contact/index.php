@@ -127,19 +127,18 @@ $output_string = convertNumPlaceholder($input_string);
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">
+                        <a class="nav-link active" href="../contact/">
                             <?php echo $translations["contactpage"]; ?>
                         </a>
                     </li>
-
-                    <li class="d-none nav-item">
-                        <a class="nav-link " href="download/">
+                    <li class="nav-item">
+                        <a class="nav-link " href="../download/">
                             <?php echo $translations["downloadpage"]; ?>
                         </a>
                     </li>
 
-                    <li class="d-none nav-item">
-                        <a class="nav-link " href="docs/">
+                    <li class="nav-item">
+                        <a class="nav-link " href="../docs/">
                             <?php echo $translations["docspage"]; ?>
                         </a>
                     </li>
@@ -283,14 +282,14 @@ $output_string = convertNumPlaceholder($input_string);
                     <ul class="list-unstyled links">
                         <li><a href="<?php echo $github_url; ?>" target="_blank" rel="noopener noreferrer">GitHub</a></li>
                         <li><a href="<?php echo $discord_url; ?>" target="_blank" rel="noopener noreferrer">Discord</a></li>
-                        <li class="d-none"><a href="support/"><?php echo $translations["support-us"]; ?></a></li>
+                        <li><a href="../support/"><?php echo $translations["support-us"]; ?></a></li>
                     </ul>
                 </div>
             </div>
 
             <div class="border-top border-secondary pt-3 mt-3">
                 <p class="small text-center mb-0">
-                    Copyright © 2024 GYM One - <?php echo $translations["copyright"]; ?>. &nbsp;<svg
+                    Copyright © 2024-2025 GYM One - <?php echo $translations["copyright"]; ?>. &nbsp;<svg
                         xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill"
                         viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314">
