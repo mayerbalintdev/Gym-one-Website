@@ -33,7 +33,7 @@ if (file_exists($langFile)) {
 <html lang="hu">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GYM One - <?php echo $translations['docs-us']; ?></title>
+<title>GYM One - <?php echo $translations['docspage']; ?></title>
 <link rel="stylesheet" href="../../assets/css/docs_style.css">
 <link rel="shortcut icon" href="http://gymoneglobal.com/assets/img/logo.png" type="image/x-icon">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">

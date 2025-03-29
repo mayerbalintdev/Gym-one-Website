@@ -29,13 +29,15 @@ A website built using the bootstrap framework. Based on PHP with Javascript and 
 For more examples, please see [Documentation](WEB).
  ## Roadmap
 
-- [ ] Add changelog
-- [ ] Publish on the World Wide Web
-- [ ] Docs website
-- [ ] Multilingual support
+- [+] Publish on the World Wide Web
+- [+] Docs website
+- Multilingual support
   - [+] Hungarian
   - [+] English
-  - [ ] 20+ additional languages
+  - [+] Turkish
+  - [+] German
+  - [+] Spanish
+  - [ ] 14+ additional languages
 
 
 See the [open issues](https://github.com/mayerbalintweb/Gym-one-Website/issues) for a full list of proposed features (and known issues).

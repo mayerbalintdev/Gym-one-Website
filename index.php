@@ -211,8 +211,8 @@ $output_string = convertNumPlaceholder($input_string);
       </div>
       <div class="row text-center">
         <div class="col">
-          <!-- <a class="btn btn-primary pulse mx-2 mb-4" href="download/"
-            role="button"><?php echo $translations['downloadbtn']; ?> <i class="bi bi-rocket-takeoff"></i></a> -->
+          <a class="btn btn-primary pulse mx-2 mb-4" href="download/"
+            role="button"><?php echo $translations['downloadbtn']; ?> <i class="bi bi-rocket-takeoff"></i></a>
           <a class="btn btn-secondary mx-2 mb-4" href="#info" role="button"><i class="bi bi-plus-lg"></i></i>
             <?php echo $translations['secondbtn']; ?></a>
         </div>

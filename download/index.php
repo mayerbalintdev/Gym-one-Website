@@ -227,7 +227,7 @@ curl_close($ch);
                     </p>
                 </div>
 
-                <a href="https://github.com/mayerbalintdev/GYM-ONE/releases"
+                <a href="https://github.com/mayerbalintdev/GYM-One-Installer/releases"
                     target="_blank" class="btn btn-lg btn-primary">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-download" viewBox="0 0 16 16">

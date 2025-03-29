@@ -262,7 +262,7 @@ if (file_exists($langFile)) {
                     <h6><?php echo $translations["docsbtn"]; ?></h6>
                 </a>
                 <h2 id="LICENSE">
-                    <a class="heading-permalink" href="#LICENSE"></a><?php echo $translations["license"]; ?>
+                    <a class="heading-permalink" href="../../assets/docs/LICENSE.pdf"></a><?php echo $translations["license"]; ?>
                 </h2>
                 <p><?php echo $translations["license_text"]; ?></p>
                 <a class="btn btn-primary" href="../../assets/docs/LICENSE">
