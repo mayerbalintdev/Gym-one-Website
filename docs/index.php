@@ -41,6 +41,7 @@ if (file_exists($langFile)) {
   integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 <link rel="shortcut icon" href="https://gymoneglobal.com/assets/img/logo.png" type="image/x-icon">
 
+
 <meta name="description"
   content="GYM One is an open source web solution for gyms. Enjoy dozens of extensions for endless possibilities. Already trusted by more than 20 gyms with over 900 users.">
 <meta name="keywords"
@@ -77,6 +78,7 @@ if (file_exists($langFile)) {
 
   gtag('config', 'G-75NV275ZQS');
 </script>
+
 
 <body>
     <!-- NAVBAR START -->

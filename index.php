@@ -37,14 +37,16 @@ $days = $interval->days;
 $hours = $interval->h;
 $minutes = $interval->i;
 
-function getDownloadCount() {
+function getDownloadCount()
+{
   $apiUrl = 'https://api.gymoneglobal.com/GET/DownloadCount';
   $response = file_get_contents($apiUrl);
   $data = json_decode($response, true);
-  return $data['downloadCount'] ?? 0+21;
+  return $data['downloadCount'];
 }
 
-function convertNumPlaceholder($input) {
+function convertNumPlaceholder($input)
+{
   $downloadCount = getDownloadCount();
   $conversion = array(
     'num' => "<strong>$downloadCount</strong>"
@@ -112,10 +114,11 @@ $output_string = convertNumPlaceholder($input_string);
   gtag('config', 'G-75NV275ZQS');
 </script>
 
-<body>
-  <!-- NAVBAR START -->
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary-gradient">
+<body>
+  
+  <!-- NAVBAR START -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container">
       <a class="navbar-brand" href="https://gymoneglobal.com">
         <img src="assets/img/text-logo.png" width="105" alt="GYM One">
@@ -402,7 +405,7 @@ $output_string = convertNumPlaceholder($input_string);
       </div>
     </div>
   </section>
-    <!-- <section id="worldwide">
+  <!-- <section id="worldwide">
       <div class="container">
         <div class="row gy-4 justify-content-between text-start">
           <div class="col-md-4 mt-5 offset-md-1 align-self-center">
